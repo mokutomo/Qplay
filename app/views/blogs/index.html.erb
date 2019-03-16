@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="clearfix">
+		 <% @blogs.each do |blog| %>
+		    <div class ="main">
+		    	<div class ="sub">
+				    <div class ="image"><%= attachment_image_tag blog, :image, format: 'jpeg', class: "sub-image"%>
+				    </div>
+				    <div class = "title"><%= blog.title %></div>
+				    <br>
+				    <span class = "place"><%= blog.location %></span>
+			    </div>
+		    </div>
+		 <% end %>
+	</div>
+</div>
