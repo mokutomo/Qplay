@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content_title: MyString
+  image_id: MyText
+  url: MyString
+  body: MyString
+  timestart: 2019-03-10 08:56:32
+  timeent: 2019-03-10 08:56:32
+  blog_id: 1
+
+two:
+  content_title: MyString
+  image_id: MyText
+  url: MyString
+  body: MyString
+  timestart: 2019-03-10 08:56:32
+  timeent: 2019-03-10 08:56:32
+  blog_id: 1
