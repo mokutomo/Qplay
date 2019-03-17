@@ -2,7 +2,7 @@
 
 			<h1>休日投稿</h1>
 
-			<%= form_for(@content) do |f| %>
+			<%= form_for @content, url: blog_contents_path do |f| %>
 
 			    <h4>施設の名前を入力してね</h4>
 			    <%= f.text_field :content_title %>
@@ -10,10 +10,12 @@
 			    <%= f.text_area :body %>
 			    <h4>URLを入力してね</h4>
 			    <%= f.text_field :url %>
-
 			    <h4>とっておきの一枚</h4>
 			    <%= f.attachment_field :image %>
-			    <%= f.submit '投稿',class: "btn btn-primary" %>
+
+
+			    <%= f.submit '続けて投稿',class: "btn btn-primary",name: "a" %>
+			    <%= f.submit '投稿',class: "btn btn-primary",name: "b" %>
 
 			    <%= f.hidden_field :blog_id,:value => @blog_id %>
 

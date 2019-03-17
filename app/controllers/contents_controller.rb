@@ -5,8 +5,13 @@ class ContentsController < ApplicationController
 	end
 	def create
 		content =Content.new(content_params)
+		content.blog_id = params[:blog_id]
 		content.save
-		redirect_to new_content_path
+		if params["a"]
+			redirect_to new_blog_content_path
+	    else
+			redirect_to root_path
+	    end
 	end
 	def index
 		@content = Content.where(blog_id: params[:blog_id])
