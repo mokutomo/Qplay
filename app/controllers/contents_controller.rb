@@ -16,6 +16,15 @@ class ContentsController < ApplicationController
 	def index
 		@content = Content.where(blog_id: params[:blog_id])
 	end
+	def edit
+	@blog = Blog.find(params[:blog_id])
+	@content = Content.find(params[:id])
+    end
+    def update
+	content = Content.find(params[:id])
+	content.update(content_params)
+	redirect_to blog_contents_path
+    end
 
 	private
     def content_params

@@ -1,0 +1,23 @@
+<div class="container">
+
+			<h1>休日投稿編集</h1>
+
+			<%= form_for [@blog,@content] do |f| %>
+
+			    <h4>施設の名前を編集してね</h4>
+			    <%= f.text_field :content_title %>
+			    <h4>本文を編集してね</h4>
+			    <%= f.text_area :body %>
+			    <h4>URLを編集してね</h4>
+			    <%= f.text_field :url %>
+			    <h4>とっておきの一枚</h4>
+			    <%= f.attachment_field :image %>
+
+
+
+			    <%= f.submit '編集完了',class: "btn btn-primary" %>
+
+
+			<% end %>
+	</div>
+<div>

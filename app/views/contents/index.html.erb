@@ -1,7 +1,17 @@
-<% @content.each do |content| %>
-    <p>タイトル</p>
-    <div><%= content.content_title %></div>
-    <div><%= content.body %></div>
-    <div><%= content.url %></div>
-
- <% end %>
+<div class="container">
+	<div class="clearfix">
+		 <% @content.each do |content| %>
+		    <div class ="main">
+		    	<div class ="sub">
+				    <div class ="image"><%= attachment_image_tag content, :image, format: 'jpeg', class: "sub-image"%>
+				    </div>
+				    <div class = "title"><%= content.content_title %></div>
+				    <br>
+				    <div class = "title"><%= content.body %></div>
+				    <div class = "title"><%= content.url %></div>
+				    <%= link_to "編集", edit_blog_content_path(content.blog.id,content.id) %>
+				</div>
+		    </div>
+		 <% end %>
+	</div>
+</div>
