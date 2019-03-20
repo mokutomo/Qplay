@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_085632) do
+ActiveRecord::Schema.define(version: 2019_03_20_095830) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2019_03_10_085632) do
     t.datetime "timestart"
     t.datetime "timeent"
     t.integer "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "random_images", force: :cascade do |t|
+    t.text "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -10,7 +10,7 @@
   </head>
 
   <body >
-    <body ">
+    <body>
     <nav class="navbar top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -22,10 +22,12 @@
           <a class="navbar-brand" href="/">Holiday's Playlist</a>
         </div>
         <div class="collapse navbar-collapse" id="navigation">
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
+          <%= link_to user_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">私の投稿</p>
+          <% end %>
+          <%= link_to new_blog_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">新規投稿</p>
+          <% end %>
         </div>
       </div>
     </nav>

@@ -5,6 +5,9 @@ resources :blogs do
 resources :contents
 end
 resources :users
+resources :random_images
+
+
 root :to => 'blogs#index'
 
 
