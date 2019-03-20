@@ -3,7 +3,7 @@
 		 <% @blogs.each do |blog| %>
 		    <div class ="main">
 		    	<div class ="sub">
-		    		<%=link_to blog_contents_path(blog.id) do %>
+		    		<%=link_to blog_contents_path(blog_id: blog.id) do %>
 				    <div class ="image"><%= attachment_image_tag blog, :image, format: 'jpeg', class: "sub-image"%>
 				    </div>
 				    <%end%>
