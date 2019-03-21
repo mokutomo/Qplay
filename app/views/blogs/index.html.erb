@@ -1,13 +1,13 @@
 <div class="container">
 	<div class="clearfix">
 		 <% @blogs.each do |blog| %>
-		    <div class ="main">
+		    <div class ="main_blog">
 		    	<div class ="sub">
 		    		<%=link_to blog_contents_path(blog_id: blog.id) do %>
 				    <div class ="image"><%= attachment_image_tag blog, :image, format: 'jpeg', class: "sub-image"%>
 				    </div>
 				    <%end%>
-				    <div class = "title"><%= blog.title %></div>
+				    <div class = "top_title"><%= blog.title .truncate(48)%></div>
 				    <br>
 				    <span class = "place"><%= blog.location %></span>
 			    </div>

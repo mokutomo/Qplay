@@ -22,6 +22,11 @@ def update
 	blog.update(blog_params)
 	redirect_to user_path(blog.id)
 end
+def destroy
+	blog = Blog.find(params[:id])
+    blog.destroy
+    redirect_to user_path
+end
 
 
 private

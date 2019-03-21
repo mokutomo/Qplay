@@ -7,7 +7,7 @@
 				    <div class ="image"><%= attachment_image_tag user, :image, format: 'jpeg', class: "sub-image"%>
 				    </div>
 				    <%end%>
-				    <div class = "title"><%= user.title %></div>
+				    <div class = "top_title"><%= user.title .truncate(48)%></div>
 				    <br>
 				    <span class = "place"><%= user.location %></span>
 				    <%= link_to "編集", edit_blog_path(user.id) %>
