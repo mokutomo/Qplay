@@ -14,7 +14,7 @@
 				<%= link_to "編集", edit_blog_content_path(content.blog.id,content.id) %>
 			</div>
 		</div>
-		<div class="random_image"><%= attachment_image_tag RandomImage.find(rand(1..12)), :image, format: 'jpeg'%>
+		<div class="random_image"><%= attachment_image_tag RandomImage.find(rand(1..2)), :image, format: 'jpeg'%>
 		</div>
 		<%end%>
 	</div>

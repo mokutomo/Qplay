@@ -13,6 +13,8 @@ def create
 end
 def index
 	@blogs = Blog.all
+	@search = Blog.ransack(params[:q])
+	@products = @search.result
 end
 def edit
 	@blog = Blog.find(params[:id])
