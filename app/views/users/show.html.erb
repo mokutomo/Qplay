@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="clearfix">
 		 <% @user.blogs.each do |user| %>
-		    <div class ="main">
+		    <div class ="main_blog">
 		    	<div class ="sub">
 		    		<%=link_to blog_contents_path(user.id) do %>
 				    <div class ="image"><%= attachment_image_tag user, :image, format: 'jpeg', class: "sub-image"%>
