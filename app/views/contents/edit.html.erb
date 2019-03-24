@@ -1,15 +1,21 @@
 <div class="container">
 
-			<h1>休日投稿編集</h1>
+			<h1 class ="text-center">休日投稿編集</h1>
 
 			<%= form_for [@blog,@content] do |f| %>
 
+<div class="form-group">
 			    <h4>施設の名前を編集してね</h4>
-			    <%= f.text_field :content_title %>
+			    <%= f.text_field :content_title,class:"form-control" %>
+			</div>
+			<div class="form-group">
 			    <h4>本文を編集してね</h4>
-			    <%= f.text_area :body %>
+			    <%= f.text_area :body,class:"form-control" %>
+			</div>
+			<div class="form-group">
 			    <h4>URLを編集してね</h4>
-			    <%= f.text_field :url %>
+			    <%= f.text_field :url,class:"form-control" %>
+			</div>
 			    <h4>とっておきの一枚</h4>
 			    <%= f.attachment_field :image %>
 
