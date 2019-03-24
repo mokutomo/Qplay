@@ -1,15 +1,20 @@
 <div class="container">
 
-			<h1>休日投稿</h1>
+			<h1 class ="text-center">休日投稿</h1>
 
 			<%= form_for @content, url: blog_contents_path do |f| %>
-
+<div class="form-group">
 			    <h4>施設の名前を入力してね</h4>
-			    <%= f.text_field :content_title %>
+			    <%= f.text_field :content_title,class:"form-control" %>
+			</div>
+			<div class="form-group">
 			    <h4>本文を入力してね</h4>
-			    <%= f.text_area :body %>
+			    <%= f.text_area :body,class:"form-control",class:"form-control" %>
+			</div>
+			<div class="form-group">
 			    <h4>URLを入力してね</h4>
-			    <%= f.text_field :url %>
+			    <%= f.text_field :url ,class:"form-control"%>
+			</div>
 			    <h4>とっておきの一枚</h4>
 			    <%= f.attachment_field :image %>
 
