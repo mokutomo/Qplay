@@ -11,7 +11,9 @@
 				<br>
 				<a href="<%= content.url %>"><%= content.url.truncate(36) %></a>
 				<br>
+				<% if @user == current_user %>
 				<%= link_to "編集", edit_blog_content_path(content.blog.id,content.id) %>
+				<% end %>
 			</div>
 		</div>
 		<div class="random_image"><%= attachment_image_tag RandomImage.find(rand(1..2)), :image, format: 'jpeg'%>

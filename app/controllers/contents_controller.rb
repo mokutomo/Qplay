@@ -14,6 +14,8 @@ class ContentsController < ApplicationController
 		end
 	end
 	def index
+		@blog = Blog.find(params[:blog_id])
+		@user = @blog.user_id
 		@content = Content.where(blog_id: params[:blog_id])
 	end
 	def edit

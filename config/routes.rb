@@ -9,9 +9,9 @@ resource :favorites, only: [:create, :destroy]
 resources :contents
 end
 
+delete '/blogs/:blog_id/favorites/mypage' => 'favorites#destroy_mypage',as: 'favorites_destroy_mypage'
 
-
-root :to => 'blogs#index'
+root :to => 'random_images#new'
 
 
 end

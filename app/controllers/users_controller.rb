@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 		@user = User.find(current_user[:id])
 	end
 	def index
+        @user = User.find(current_user[:id])
+        @favorites = @user.favorites
+        @search = Blog.ransack(params[:q])
+        @products = @search.result
 	end
 	def destroy
 		blog = Blog.find(params[:id])
