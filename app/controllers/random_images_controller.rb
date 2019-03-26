@@ -1,4 +1,5 @@
 class RandomImagesController < ApplicationController
+	before_action :authenticate_user!
 def new
 	@random = RandomImage.new
 end

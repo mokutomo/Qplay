@@ -11,7 +11,7 @@ end
 
 delete '/blogs/:blog_id/favorites/mypage' => 'favorites#destroy_mypage',as: 'favorites_destroy_mypage'
 
-root :to => 'random_images#new'
+root :to => 'blogs#index'
 
 
 end

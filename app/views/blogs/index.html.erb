@@ -20,6 +20,7 @@
 				<div class = "top_title"><%= blog.title .truncate(48)%></div>
 				<br>
 				<span class = "place"><%= blog.location %></span>
+				<% if user_signed_in? %>
 
 				<% if blog.favorited_by?(current_user) %>
 				<div>
@@ -36,7 +37,7 @@
 					<% end %>
 				</div>
 				<% end %>
-
+				<% end %>
 			</div>
 		</div>
 		<% end %>
