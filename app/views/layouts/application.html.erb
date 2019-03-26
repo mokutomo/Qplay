@@ -7,10 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body >
-    <body ">
+    <body>
     <nav class="navbar top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -21,12 +22,49 @@
           </button>
           <a class="navbar-brand" href="/">Holiday's Playlist</a>
         </div>
+        <% if user_signed_in?&& current_user.admin == true %>
         <div class="collapse navbar-collapse" id="navigation">
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
-          <p class="navbar-text navbar-right">ozaki25 さんでログイン中</p>
+          <%= link_to destroy_user_session_path,method: :delete do %>
+          <p class="navbar-text navbar-right">ログアウト</p>
+          <%= link_to user_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">マイページ</p>
+          <% end %>
+          <%= link_to new_random_image_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">画像入れ込み</p>
+          <% end %>
+          <%= link_to new_blog_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">新規投稿</p>
+          <% end %>
+          <%= link_to users_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">私のお気に入り</p>
+          <% end %>
+          <% end %>
         </div>
+        <% elsif user_signed_in? %>
+        <div class="collapse navbar-collapse" id="navigation">
+          <%= link_to destroy_user_session_path,method: :delete do %>
+          <p class="navbar-text navbar-right">ログアウト</p>
+          <%= link_to user_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">マイページ</p>
+          <% end %>
+          <%= link_to new_blog_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">新規投稿</p>
+          <% end %>
+          <%= link_to users_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">私のお気に入り</p>
+          <% end %>
+          <% end %>
+        <% else %>
+        <div class="collapse navbar-collapse" id="navigation">
+          <%= link_to new_user_registration_path do %>
+          <p class="navbar-text navbar-right">新規登録</p>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+          <p class="navbar-text navbar-right">ログイン</p>
+          <% end %>
+        </div>
+        <% end %>
+
       </div>
     </nav>
   </body>

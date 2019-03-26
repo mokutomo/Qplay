@@ -1,7 +1,23 @@
-<% @content.each do |content| %>
-    <p>タイトル</p>
-    <div><%= content.content_title %></div>
-    <div><%= content.body %></div>
-    <div><%= content.url %></div>
-
- <% end %>
+<div class="container">
+	<div class="clearfix">
+		<% @content.each do |content| %>
+		<div class ="main2">
+			<div class ="sub">
+				<div class ="image"><%= attachment_image_tag content, :image, format: 'jpeg', class: "sub-image"%>
+				</div>
+				<div class = "title"><%= content.content_title %></div>
+				<br>
+				<div class = "content_body"><%= content.body.truncate(160) %></div>
+				<br>
+				<a href="<%= content.url %>"><%= content.url.truncate(36) %></a>
+				<br>
+				<% if @user == current_user %>
+				<%= link_to "編集", edit_blog_content_path(content.blog.id,content.id) %>
+				<% end %>
+			</div>
+		</div>
+		<div class="random_image"><%= attachment_image_tag RandomImage.find(rand(1..2)), :image, format: 'jpeg'%>
+		</div>
+		<%end%>
+	</div>
+</div>

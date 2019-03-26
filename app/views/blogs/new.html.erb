@@ -1,20 +1,20 @@
 <div class="container">
 
-			<h1>休日投稿</h1>
+	<h1 class ="text-center">休日投稿</h1>
 
-			<%= form_for(@blog) do |f| %>
-
-			    <h4>1日のタイトルを入力してね</h4>
-			    <%= f.text_field :title %>
-
-			    <h4>都道府県を選んでね</h4>
-					<%= f.select :location, Blog.locations.keys, {prompt: '選択してください'} %>
-
-			    <h4>この日のベストショットを選んでね</h4>
-			    <%= f.attachment_field :image %>
-
-			    <%= f.submit '投稿',class: "btn btn-primary" %>
-
-			<% end %>
+	<%= form_for(@blog) do |f| %>
+	<div class="form-group">
+		<h4>1日のタイトルを入力してね</h4>
+		<%= f.text_field :title,class:"form-control" %>
 	</div>
+	<h4>都道府県を選んでね</h4>
+	<%= f.select :location, Blog.locations.keys, {prompt: '選択してください'} %>
+
+	<h4>この日のベストショットを選んでね</h4>
+	<%= f.attachment_field :image %>
+
+	<%= f.submit '投稿',class: "btn btn-primary" %>
+
+	<% end %>
+</div>
 <div>

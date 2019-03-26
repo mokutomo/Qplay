@@ -1,0 +1,21 @@
+<div class="container">
+
+	<div class = "seach"><%= link_to "ユーザー情報編集" ,edit_user_path ,class:"btn btn-warning" %>
+	</div>
+	<div class="clearfix">
+		 <% @user.blogs.each do |user| %>
+		    <div class ="main_blog">
+		    	<div class ="sub">
+		    		<%=link_to blog_contents_path(user.id) do %>
+				    <div class ="image"><%= attachment_image_tag user, :image, format: 'jpeg', class: "sub-image"%>
+				    </div>
+				    <%end%>
+				    <div class = "top_title"><%= user.title .truncate(48)%></div>
+				    <br>
+				    <span class = "place"><%= user.location %></span>
+				    <%= link_to "編集", edit_blog_path(user.id) %>
+			    </div>
+		    </div>
+		 <% end %>
+	</div>
+</div>

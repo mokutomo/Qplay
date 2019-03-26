@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
 
 
+
 def new
 	@blog = Blog.new
 end
@@ -13,6 +14,21 @@ def create
 end
 def index
 	@blogs = Blog.all
+	@search = Blog.ransack(params[:q])
+	@products = @search.result
+end
+def edit
+	@blog = Blog.find(params[:id])
+end
+def update
+	blog = Blog.find(params[:id])
+	blog.update(blog_params)
+	redirect_to user_path(blog.id)
+end
+def destroy
+	blog = Blog.find(params[:id])
+    blog.destroy
+    redirect_to user_path
 end
 
 

@@ -1,0 +1,35 @@
+<div class="container">
+	<div class = "seach">
+		<%= search_form_for @search do |f| %>
+		<%= f.label :location_cont, "都道府県名で検索" %>
+		<%= f.search_field :location_cont %>
+
+		<%= f.submit "検索",class:"btn btn-success" %>
+		<% end %>
+	</div>
+	<div class="clearfix">
+
+
+		<% @favorites.each do |favorite| %>
+		<div class ="main_blog">
+			<div class ="sub">
+				<%=link_to blog_contents_path(blog_id: favorite.id) do %>
+				<div class ="image"><%= attachment_image_tag favorite.user, :image, format: 'jpeg', class: "sub-image"%>
+				</div>
+				<%end%>
+				<div class = "top_title"><%= favorite.blog.title .truncate(48)%></div>
+				<br>
+				<span class = "place"><%= favorite.blog.location %></span>
+
+				<div>
+					<%= link_to favorites_destroy_mypage_path(favorite.blog, favorite), method: :delete do %>
+					<div class="fas fa-heart" aria-hidden="true" style="color: purple;"></div>
+					<%= favorite.blog.favorites.count %>
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
