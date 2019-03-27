@@ -11,7 +11,7 @@
 				<br>
 				<a href="<%= content.url %>"><%= content.url.truncate(36) %></a>
 				<br>
-				<% if @user == current_user %>
+				<% if content.blog.user.id == current_user.id %>
 				<%= link_to "編集", edit_blog_content_path(content.blog.id,content.id) %>
 				<% end %>
 			</div>

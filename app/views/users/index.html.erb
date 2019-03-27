@@ -14,7 +14,7 @@
 		<div class ="main_blog">
 			<div class ="sub">
 				<%=link_to blog_contents_path(blog_id: favorite.id) do %>
-				<div class ="image"><%= attachment_image_tag favorite.user, :image, format: 'jpeg', class: "sub-image"%>
+				<div class ="image"><%= attachment_image_tag favorite.blog, :image, format: 'jpeg', class: "sub-image"%>
 				</div>
 				<%end%>
 				<div class = "top_title"><%= favorite.blog.title .truncate(48)%></div>

@@ -32,6 +32,9 @@
           <%= link_to new_random_image_path(current_user.id) do %>
           <p class="navbar-text navbar-right">画像入れ込み</p>
           <% end %>
+          <%= link_to admins_path(current_user.id) do %>
+          <p class="navbar-text navbar-right">ユーザー一覧</p>
+          <% end %>
           <%= link_to new_blog_path(current_user.id) do %>
           <p class="navbar-text navbar-right">新規投稿</p>
           <% end %>

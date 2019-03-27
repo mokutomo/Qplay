@@ -1,0 +1,13 @@
+<div class="container">
+	<% @users.each do |user| %>
+	<div class = "user">
+		<div class="row">
+			<%= link_to admin_path(user.id) do %>
+			<div class="col-sm-3"><%= user.name %></div>
+			<% end %>
+
+			<div class="col-sm-4"><%= user.email %></div>
+			<br>
+		</div>
+	</div>
+	<% end %>
