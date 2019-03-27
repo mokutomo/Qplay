@@ -4,7 +4,11 @@
 
 	<%= form_for(@user) do |f| %>
 	<div class="form-group">
-		<h4>emailを編集してね</h4>
+		<h4>ニックネームを編集できるよ</h4>
+		<%= f.text_field :name,class:"form-control" %>
+	</div>
+	<div class="form-group">
+		<h4>emailを編集できるよ</h4>
 		<%= f.text_field :email,class:"form-control" %>
 	</div>
 	<%= f.submit '編集完了',class: "btn btn-primary" %>
