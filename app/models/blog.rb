@@ -18,6 +18,7 @@ class Blog < ApplicationRecord
         favorites.where(user_id: user.id).exists?
     end
     validates :title,
-    length: { maximum: 53 }
+    length: { maximum: 53 },presence: true
+    validates :location,presence: true
 
 end

@@ -6,4 +6,6 @@ class User < ApplicationRecord
          has_many :blogs , dependent: :destroy
          has_many :favorites, dependent: :destroy
          attachment :image
+         validates :name,
+         length: { maximum: 20 },presence: true
 end
