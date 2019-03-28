@@ -1,5 +1,5 @@
 class Blog < ApplicationRecord
-	has_many :contents
+	has_many :contents, dependent: :destroy
 	belongs_to :user
 
 	enum locations: {
@@ -17,5 +17,7 @@ class Blog < ApplicationRecord
     def favorited_by?(user)
         favorites.where(user_id: user.id).exists?
     end
+    validates :title,
+    length: { maximum: 53 }
 
 end

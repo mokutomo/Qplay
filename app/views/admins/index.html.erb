@@ -2,12 +2,11 @@
 	<% @users.each do |user| %>
 	<div class = "user">
 		<div class="row">
-			<%= link_to admin_path(user.id) do %>
 			<div class="col-sm-3"><%= user.name %></div>
-			<% end %>
 
-			<div class="col-sm-4"><%= user.email %></div>
-			<br>
+			<div class="col-sm-3"><%= user.email %></div>
+			<div class="col-sm-3"><%= link_to "削除", admin_path(user.id), method: :delete,class: "btn btn-primary" %>
+			</div>
 		</div>
 	</div>
 	<% end %>
