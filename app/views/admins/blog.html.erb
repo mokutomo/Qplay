@@ -1,23 +1,15 @@
 <div class="container">
-	<div class = "seach">
-		<%= search_form_for @search do |f| %>
-		<%= f.label :location_cont, "都道府県名で検索" %>
-		<%= f.search_field :location_cont %>
-
-		<%= f.submit "検索",class:"btn btn-success" %>
-		<% end %>
-	</div>
 	<div class="clearfix">
 
 
-		<% @products.each do |blog| %>
+		<% @blogs.each do |blog| %>
 		<div class ="main_blog">
 			<div class ="sub">
 				<%=link_to blog_contents_path(blog_id: blog.id) do %>
 				<div class ="image"><%= attachment_image_tag blog, :image, format: 'jpeg', class: "sub-image"%>
 				</div>
 				<%end%>
-				<div class = "top_title"><%= blog.title %></div>
+				<div class = "top_title"><%= blog.title .truncate(48)%></div>
 				<br>
 				<span class = "place"><%= blog.location %></span>
 				<% if user_signed_in? %>
@@ -37,6 +29,7 @@
 					<% end %>
 				</div>
 				<% end %>
+				<%= link_to "削除", blog_destroy_path(blog), method: :delete,class: "btn btn-primary" %>
 				<% end %>
 			</div>
 		</div>
